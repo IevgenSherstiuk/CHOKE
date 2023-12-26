@@ -104,7 +104,7 @@ async def main(page: ft.Page):
 
 
     #MAIN MATRIX 
-    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst, spacing=7)
+    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst, spacing=10)
     cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'])
     cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'])
     cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'])
