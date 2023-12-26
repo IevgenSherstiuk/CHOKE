@@ -78,7 +78,7 @@ async def main(page: ft.Page):
                             border_width=2,
                             border_color=ft.colors.CYAN_800,
                             cursor_color=ft.colors.CYAN_800,
-                            content_padding=ft.padding.all(5),
+                            content_padding=ft.padding.all(0),
                             width=60,
                             height=40,
                             color=ft.colors.CYAN_900)
@@ -86,7 +86,19 @@ async def main(page: ft.Page):
         H_inst_strip.append(Value)
         H_inst.append(ft.Container(Value, padding=0))
 
-    empty_btn = ft.Container(width=60, height=40)
+    empty_btn = ft.Row(controls=[ft.TextField(value=f"0",
+                            text_align="center",
+                            text_size=16,
+                            border_radius=20,
+                            border_width=2,
+                            border_color=ft.colors.DEEP_ORANGE_900,
+                            cursor_color=ft.colors.DEEP_ORANGE_900,
+                            content_padding=ft.padding.all(0),
+                            width=60,
+                            height=40,
+                            color=ft.colors.DEEP_ORANGE_900),ft.Text('')], spacing=8)
+
+    #ft.Container(width=60, height=40)
     Mu_inst = [empty_btn]
     Mu_inst_strip = []
     for Mu in Mu_list:
@@ -97,7 +109,7 @@ async def main(page: ft.Page):
                             border_width=2,
                             border_color=ft.colors.DEEP_ORANGE_900,
                             cursor_color=ft.colors.DEEP_ORANGE_900,
-                            content_padding=ft.padding.all(5),
+                            content_padding=ft.padding.all(0),
                             width=60,
                             height=40,
                             color=ft.colors.DEEP_ORANGE_900)
@@ -106,17 +118,16 @@ async def main(page: ft.Page):
         Mu_inst.append(ft.Row(controls=[Value,ft.Text('')], spacing=8))
 
 
-    
     #MAIN MATRIX 
-    Mu_ = ft.Column(controls=Mu_inst, alignment=ft.MainAxisAlignment.CENTER)
-    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'], alignment=ft.MainAxisAlignment.CENTER)
-    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'], alignment=ft.MainAxisAlignment.CENTER)
-    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'], alignment=ft.MainAxisAlignment.CENTER)
-    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'], alignment=ft.MainAxisAlignment.CENTER)
-    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'], alignment=ft.MainAxisAlignment.CENTER)
-    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'], alignment=ft.MainAxisAlignment.CENTER)
-    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'], alignment=ft.MainAxisAlignment.CENTER)
-    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'], alignment=ft.MainAxisAlignment.CENTER)
+    Mu_ = ft.Column(controls=Mu_inst, spacing= 5)
+    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'], spacing= 5)
+    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'], spacing= 5)
+    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'], spacing= 5)
+    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'], spacing= 5)
+    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'], spacing= 5)
+    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'], spacing= 5)
+    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'], spacing= 5)
+    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'], spacing= 5)
   
  
 
@@ -140,7 +151,7 @@ async def main(page: ft.Page):
     matrixCtr.padding = ft.padding.only(bottom=30, top=30, left=10, right=10)
 
     await page.add_async(title_text_colmn,
-            ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden'), padding=20),
+            ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden', wrap=True), padding=20),
             culc_btn,
             output_text,
             matrixCtr)
