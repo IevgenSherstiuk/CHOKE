@@ -116,16 +116,16 @@ async def main(page: ft.Page):
     cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'])#, spacing=8)
     
     cln8 = ft.Column(controls=[
-        ft.ElevatedButton('1'),
-        ft.ElevatedButton('2'),
-        ft.ElevatedButton('3')], spacing=0)
+        ft.FilledButton('1'),
+        ft.FilledButton('2'),
+        ft.FilledButton('3')], spacing=0)
  
 
 
 
     #----
-    matrix = ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
-                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=10, scroll='always')
+    matrix = ft.Row([ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
+                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=10, scroll='always')], alignment=ft.MainAxisAlignment.CENTER)
 
     title_text = ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22)
     title_row = ft.Row(controls=[title_text], alignment=ft.MainAxisAlignment.CENTER)
