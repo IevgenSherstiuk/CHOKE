@@ -68,7 +68,6 @@ async def main(page: ft.Page):
 
 
     #AXIS VALUES 
-    empty_btn = ft.Container(width=60)
     H_inst = []
     H_inst_strip = []
     for height in H_list:
@@ -87,8 +86,8 @@ async def main(page: ft.Page):
         H_inst_strip.append(Value)
         H_inst.append(ft.Container(Value, padding=0))
 
-
-    Mu_inst = []
+    empty_btn = ft.Container(width=60, height=40)
+    Mu_inst = [empty_btn]
     Mu_inst_strip = []
     for Mu in Mu_list:
         Value = ft.TextField(value=f"{Mu}",
@@ -108,28 +107,27 @@ async def main(page: ft.Page):
 
 
 
-#MAIN MATRIX 
-    row_ = ft.Column(spacing=5, controls=H_inst, alignment=ft.MainAxisAlignment.CENTER)
-    row0 = ft.Column(spacing=5, controls=btns_matrix[f'01'], alignment=ft.MainAxisAlignment.CENTER)
-    row1 = ft.Column(spacing=5, controls=btns_matrix[f'02'], alignment=ft.MainAxisAlignment.CENTER)
-    row2 = ft.Column(spacing=5, controls=btns_matrix[f'03'], alignment=ft.MainAxisAlignment.CENTER)
-    row3 = ft.Column(spacing=5, controls=btns_matrix[f'04'], alignment=ft.MainAxisAlignment.CENTER)
-    row4 = ft.Column(spacing=5, controls=btns_matrix[f'05'], alignment=ft.MainAxisAlignment.CENTER)
-    row5 = ft.Column(spacing=5, controls=btns_matrix[f'06'], alignment=ft.MainAxisAlignment.CENTER)
-    row6 = ft.Column(spacing=5, controls=btns_matrix[f'07'], alignment=ft.MainAxisAlignment.CENTER)
-    row7 = ft.Column(spacing=5, controls=btns_matrix[f'08'], alignment=ft.MainAxisAlignment.CENTER)
-    row8 = ft.Column(spacing=5, controls=btns_matrix[f'09'], alignment=ft.MainAxisAlignment.CENTER)
-    row9 = ft.Column(spacing=5, controls=btns_matrix[f'10'], alignment=ft.MainAxisAlignment.CENTER)
-    row10 = ft.Column(spacing=5, controls=btns_matrix[f'11'], alignment=ft.MainAxisAlignment.CENTER)
-    row11 = ft.Column(spacing=5, controls=btns_matrix[f'12'], alignment=ft.MainAxisAlignment.CENTER)
-    row12 = ft.Column(spacing=5, controls=btns_matrix[f'13'], alignment=ft.MainAxisAlignment.CENTER)
-    row13 = ft.Column(spacing=5, controls=btns_matrix[f'14'], alignment=ft.MainAxisAlignment.CENTER)
-    row14 = ft.Column(spacing=5, controls=btns_matrix[f'15'], alignment=ft.MainAxisAlignment.CENTER)
-    row15 = ft.Column(spacing=5, controls=btns_matrix[f'16'], alignment=ft.MainAxisAlignment.CENTER)
-    row16 = ft.Column(spacing=5, controls=btns_matrix[f'17'], alignment=ft.MainAxisAlignment.CENTER)
-    row17 = ft.Column(spacing=5, controls=btns_matrix[f'18'], alignment=ft.MainAxisAlignment.CENTER)
-    row18 = ft.Column(spacing=5, controls=btns_matrix[f'19'], alignment=ft.MainAxisAlignment.CENTER)
-    row19 = ft.Column(spacing=5, controls=btns_matrix[f'20'], alignment=ft.MainAxisAlignment.CENTER)
+
+    controls = [[H_inst[0]] + btns_matrix[f'1'],
+                [H_inst[1]] + btns_matrix[f'2'],
+                [H_inst[2]] + btns_matrix[f'3'],
+                [H_inst[3]] + btns_matrix[f'4'],
+                [H_inst[4]] + btns_matrix[f'5'],
+                [H_inst[5]] + btns_matrix[f'6'],
+                [H_inst[6]] + btns_matrix[f'7'],
+                [H_inst[7]] + btns_matrix[f'8']]
+    
+    #MAIN MATRIX 
+    Mu_ = ft.Column(spacing=5, controls=Mu_inst, alignment=ft.MainAxisAlignment.CENTER)
+    cln0 = ft.Column(spacing=5, controls=[H_inst[0]] + btns_matrix[f'1'], alignment=ft.MainAxisAlignment.CENTER)
+    cln1 = ft.Column(spacing=5, controls=[H_inst[1]] + btns_matrix[f'2'], alignment=ft.MainAxisAlignment.CENTER)
+    cln2 = ft.Column(spacing=5, controls=[H_inst[2]] + btns_matrix[f'3'], alignment=ft.MainAxisAlignment.CENTER)
+    cln3 = ft.Column(spacing=5, controls=[H_inst[3]] + btns_matrix[f'4'], alignment=ft.MainAxisAlignment.CENTER)
+    cln4 = ft.Column(spacing=5, controls=[H_inst[4]] + btns_matrix[f'5'], alignment=ft.MainAxisAlignment.CENTER)
+    cln5 = ft.Column(spacing=5, controls=[H_inst[5]] + btns_matrix[f'6'], alignment=ft.MainAxisAlignment.CENTER)
+    cln6 = ft.Column(spacing=5, controls=[H_inst[6]] + btns_matrix[f'7'], alignment=ft.MainAxisAlignment.CENTER)
+    cln7 = ft.Column(spacing=5, controls=[H_inst[7]] + btns_matrix[f'8'], alignment=ft.MainAxisAlignment.CENTER)
+  
  
 
 
@@ -139,10 +137,8 @@ async def main(page: ft.Page):
 
 
     #----
-    matrix = ft.Row([row_, row0, row1, row2, row3, row4,
-                        row5, row6, row7, row8, row9, row10,
-                        row11, row12, row13, row14, row15, row16,
-                        row17, row18, row19], alignment=ft.MainAxisAlignment.CENTER, scroll='always')
+    matrix = ft.Row([Mu_, cln0, cln1, cln2, cln3, cln4,
+                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=4, scroll='always')
 
     title_text = ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22)
     title_row = ft.Row(controls=[title_text], alignment=ft.MainAxisAlignment.CENTER)
@@ -150,14 +146,14 @@ async def main(page: ft.Page):
     output_text = ft.Text('Please select N-cell from table', color=ft.colors.BLUE_900, size=16)    
     culc_btn = ft.Container(ft.ElevatedButton('CALCULATE', on_click=N_culc))
     culc_btn.padding = ft.padding.only(bottom=20)
-    #----
-
+    matrixCtr = ft.Container(content=matrix, bgcolor=ft.colors.BLUE_100, border_radius=20)
+    matrixCtr.padding = ft.padding.only(bottom=30, top=30, left=10, right=10)
 
     await page.add_async(title_text_colmn,
-            ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30), padding=20),
+            ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden'), padding=20),
             culc_btn,
             output_text,
-            ft.Container(content=matrix, bgcolor=ft.colors.BLUE_100, padding=30))
+            matrixCtr)
     await page.update_async()
 
 
