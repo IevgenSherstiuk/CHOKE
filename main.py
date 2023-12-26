@@ -116,16 +116,16 @@ async def main(page: ft.Page):
     cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'])#, spacing=8)
     
     cln8 = ft.Column(controls=[
-        ft.FilledButton('1'),
-        ft.FilledButton('2'),
-        ft.FilledButton('3')], spacing=0)
+        ft.FilledTonalButton('1'),
+        ft.FilledTonalButton('2'),
+        ft.FilledTonalButton('3')], spacing=0)
  
 
 
 
     #----
-    matrix = ft.Row([ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
-                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=10, scroll='always')], alignment=ft.MainAxisAlignment.CENTER)
+    matrix = ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
+                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=10, scroll='always')
 
     title_text = ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22)
     title_row = ft.Row(controls=[title_text], alignment=ft.MainAxisAlignment.CENTER)
@@ -134,9 +134,7 @@ async def main(page: ft.Page):
     culc_btn = ft.Container(ft.ElevatedButton('CALCULATE', on_click=N_culc))
     culc_btn.padding = ft.padding.only(bottom=20)
 
-    #matrixCtr = ft.Container(content=ft.Column([matrix], horizontal_alignment=ft.MainAxisAlignment.CENTER), bgcolor=ft.colors.BLUE_100, padding=20)
-
-    matrixCtr = ft.Container(content=matrix, bgcolor=ft.colors.BLUE_100, border_radius=20)
+    matrixCtr = ft.Container(content=matrix, bgcolor=ft.colors.BLUE_100, border_radius=20, width=2000)
     matrixCtr.padding = ft.padding.only(bottom=30, top=30, left=10, right=10)
 
     await page.add_async(title_text_colmn,
