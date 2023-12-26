@@ -104,15 +104,15 @@ async def main(page: ft.Page):
 
 
     #MAIN MATRIX 
-    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst, spacing=8)
-    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'], spacing=0)
-    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'], spacing=0)
-    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'], spacing=0)
-    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'], spacing=0)
-    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'], spacing=0)
-    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'], spacing=0)
-    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'], spacing=0)
-    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'], spacing=0)
+    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst, spacing=7)
+    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'], spacing=7)
+    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'], spacing=7)
+    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'], spacing=7)
+    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'], spacing=7)
+    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'], spacing=7)
+    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'], spacing=7)
+    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'], spacing=7)
+    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'], spacing=7)
   
  
 
