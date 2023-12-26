@@ -115,14 +115,12 @@ async def main(page: ft.Page):
     cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'])#, spacing=8)
     cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'])#, spacing=8)
     
-    cln8 = cln7
-    cln8.spacing = 0
+    cln8 = ft.Column(controls=[
+        ft.ElevatedButton('1'),
+        ft.ElevatedButton('2'),
+        ft.ElevatedButton('3')], spacing=0)
  
 
-
-
-
-    #horizontal_alignment=ft.MainAxisAlignment.CENTER    
 
 
     #----
