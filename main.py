@@ -106,27 +106,17 @@ async def main(page: ft.Page):
         Mu_inst.append(ft.Row(controls=[Value,ft.Text('')], spacing=8))
 
 
-
-
-    controls = [[H_inst[0]] + btns_matrix[f'1'],
-                [H_inst[1]] + btns_matrix[f'2'],
-                [H_inst[2]] + btns_matrix[f'3'],
-                [H_inst[3]] + btns_matrix[f'4'],
-                [H_inst[4]] + btns_matrix[f'5'],
-                [H_inst[5]] + btns_matrix[f'6'],
-                [H_inst[6]] + btns_matrix[f'7'],
-                [H_inst[7]] + btns_matrix[f'8']]
     
     #MAIN MATRIX 
-    Mu_ = ft.Column(spacing=5, controls=Mu_inst, alignment=ft.MainAxisAlignment.CENTER)
-    cln0 = ft.Column(spacing=5, controls=[H_inst[0]] + btns_matrix[f'1'], alignment=ft.MainAxisAlignment.CENTER)
-    cln1 = ft.Column(spacing=5, controls=[H_inst[1]] + btns_matrix[f'2'], alignment=ft.MainAxisAlignment.CENTER)
-    cln2 = ft.Column(spacing=5, controls=[H_inst[2]] + btns_matrix[f'3'], alignment=ft.MainAxisAlignment.CENTER)
-    cln3 = ft.Column(spacing=5, controls=[H_inst[3]] + btns_matrix[f'4'], alignment=ft.MainAxisAlignment.CENTER)
-    cln4 = ft.Column(spacing=5, controls=[H_inst[4]] + btns_matrix[f'5'], alignment=ft.MainAxisAlignment.CENTER)
-    cln5 = ft.Column(spacing=5, controls=[H_inst[5]] + btns_matrix[f'6'], alignment=ft.MainAxisAlignment.CENTER)
-    cln6 = ft.Column(spacing=5, controls=[H_inst[6]] + btns_matrix[f'7'], alignment=ft.MainAxisAlignment.CENTER)
-    cln7 = ft.Column(spacing=5, controls=[H_inst[7]] + btns_matrix[f'8'], alignment=ft.MainAxisAlignment.CENTER)
+    Mu_ = ft.Column(controls=Mu_inst, alignment=ft.MainAxisAlignment.CENTER)
+    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'], alignment=ft.MainAxisAlignment.CENTER)
+    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'], alignment=ft.MainAxisAlignment.CENTER)
+    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'], alignment=ft.MainAxisAlignment.CENTER)
+    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'], alignment=ft.MainAxisAlignment.CENTER)
+    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'], alignment=ft.MainAxisAlignment.CENTER)
+    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'], alignment=ft.MainAxisAlignment.CENTER)
+    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'], alignment=ft.MainAxisAlignment.CENTER)
+    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'], alignment=ft.MainAxisAlignment.CENTER)
   
  
 
