@@ -28,8 +28,8 @@ async def N_culculate(I, L, h_list, mu_arr):
     S1w = S1w/10**6 # м2 <<<=======================
 
     df = []
-    for i in range(len(mu_arr)):
-        list = [None]*len(h_list)
+    for i in range(len(h_list)):
+        list = [None]*len(mu_arr)
         df.append(list)
 
 
@@ -47,7 +47,7 @@ async def N_culculate(I, L, h_list, mu_arr):
                     h = int(h*1000)
                     h_index = h_list.index(h)
                     mu_index = mu_arr.index(mu)
-                    df[mu_index][h_index] = N
+                    df[h_index][mu_index] = N
                     break
             i+=1
     return df   
