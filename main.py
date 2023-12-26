@@ -100,19 +100,20 @@ async def main(page: ft.Page):
                             color=ft.colors.DEEP_ORANGE_900)
 
         Mu_inst_strip.append(Value)
-        Mu_inst.append(ft.Row(controls=[Value,ft.Text('')], spacing=8))
+        Mu_inst.append(Value)
+        #Mu_inst.append(ft.Row(controls=[Value,ft.Text('')]))
 
 
     #MAIN MATRIX 
-    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst, spacing=10)
-    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'])
-    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'])
-    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'])
-    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'])
-    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'])
-    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'])
-    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'])
-    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'])
+    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst, spacing=8)
+    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'], spacing=8)
+    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'], spacing=8)
+    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'], spacing=8)
+    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'], spacing=8)
+    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'], spacing=8)
+    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'], spacing=8)
+    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'], spacing=8)
+    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'], spacing=8)
   
  
 
@@ -123,8 +124,8 @@ async def main(page: ft.Page):
 
 
     #----
-    matrix = ft.Row([Mu_, cln0, cln1, cln2, cln3, cln4,
-                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=4, scroll='always')
+    matrix = ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
+                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER)#, spacing=4, scroll='always')
 
     title_text = ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22)
     title_row = ft.Row(controls=[title_text], alignment=ft.MainAxisAlignment.CENTER)
@@ -132,6 +133,9 @@ async def main(page: ft.Page):
     output_text = ft.Text('Please select N-cell from table', color=ft.colors.BLUE_900, size=16)    
     culc_btn = ft.Container(ft.ElevatedButton('CALCULATE', on_click=N_culc))
     culc_btn.padding = ft.padding.only(bottom=20)
+
+    #matrixCtr = ft.Container(content=ft.Column([matrix], horizontal_alignment=ft.MainAxisAlignment.CENTER), bgcolor=ft.colors.BLUE_100, padding=20)
+
     matrixCtr = ft.Container(content=matrix, bgcolor=ft.colors.BLUE_100, border_radius=20)
     matrixCtr.padding = ft.padding.only(bottom=30, top=30, left=10, right=10)
 
