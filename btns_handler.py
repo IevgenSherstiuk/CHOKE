@@ -19,225 +19,204 @@ async def btns_from_df(df):
         btns_matrix = {}
 
         i = 0    
-        btn011 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn012 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn013 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn014 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn015 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn016 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn017 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn018 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn011, btn012, btn013, btn014, btn015, btn016, btn017, btn018]
-
-        i = 1
-        btn021 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn022 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn023 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn024 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn025 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn026 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn027 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn028 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn021, btn022, btn023, btn024, btn025, btn026, btn027, btn028]
+        btn101 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn102 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn103 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn104 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn105 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn106 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn107 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn108 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn109 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn110 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn111 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn112 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn113 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn114 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn115 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn116 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn117 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn118 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn119 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn120 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn101, btn102, btn103, btn104, btn105, btn106, btn107, btn108,
+                                btn109, btn110, btn111, btn112, btn113, btn114, btn115, btn116, btn117, btn118, btn119, btn120]
         
-        i = 2
-        btn031 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn032 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn033 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn034 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn035 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn036 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn037 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn038 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn031, btn032, btn033, btn034, btn035, btn036, btn037, btn038]
 
-        i = 3
-        btn041 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn042 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn043 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn044 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn045 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn046 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn047 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn048 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn041, btn042, btn043, btn044, btn045, btn046, btn047, btn048]
+        i = 1    
+        btn201 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn202 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn203 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn204 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn205 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn206 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn207 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn208 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn209 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn210 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn211 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn212 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn213 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn214 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn215 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn216 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn217 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn218 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn219 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn220 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn201, btn202, btn203, btn204, btn205, btn206, btn207, btn208,
+                                btn209, btn210, btn211, btn212, btn213, btn214, btn215, btn216, btn217, btn218, btn219, btn220]
+        
+        i = 2    
+        btn301 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn302 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn303 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn304 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn305 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn306 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn307 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn308 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn309 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn310 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn311 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn312 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn313 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn314 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn315 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn316 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn317 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn318 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn319 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn320 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn301, btn302, btn303, btn304, btn305, btn306, btn307, btn308,
+                                btn309, btn310, btn311, btn312, btn313, btn314, btn315, btn316, btn317, btn318, btn319, btn320]
+        
 
-        i = 4
-        btn051 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn052 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn053 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn054 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn055 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn056 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn057 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn058 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn051, btn052, btn053, btn054, btn055, btn056, btn057, btn058]
+        i = 3   
+        btn401 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn402 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn403 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn404 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn405 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn406 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn407 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn408 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn409 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn410 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn411 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn412 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn413 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn414 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn415 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn416 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn417 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn418 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn419 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn420 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn401, btn402, btn403, btn404, btn405, btn406, btn407, btn408,
+                                btn409, btn410, btn411, btn412, btn413, btn414, btn415, btn416, btn417, btn418, btn419, btn420]
+        
 
-        i = 5
-        btn061 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn062 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn063 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn064 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn065 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn066 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn067 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn068 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn061, btn062, btn063, btn064, btn065, btn066, btn067, btn068]
+        i = 4    
+        btn501 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn502 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn503 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn504 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn505 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn506 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn507 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn508 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn509 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn510 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn511 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn512 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn513 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn514 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn515 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn516 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn517 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn518 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn519 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn520 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn501, btn502, btn503, btn504, btn505, btn506, btn507, btn508,
+                                btn509, btn510, btn511, btn512, btn513, btn514, btn515, btn516, btn517, btn518, btn519, btn520]
+        
 
-        i = 6
-        btn071 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn072 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn073 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn074 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn075 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn076 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn077 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn078 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn071, btn072, btn073, btn074, btn075, btn076, btn077, btn078]
+        i = 5    
+        btn601 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn602 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn603 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn604 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn605 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn606 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn607 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn608 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn609 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn610 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn611 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn612 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn613 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn614 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn615 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn616 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn617 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn618 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn619 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn620 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn601, btn602, btn603, btn604, btn605, btn606, btn607, btn608,
+                                btn609, btn610, btn611, btn612, btn613, btn614, btn615, btn616, btn617, btn618, btn619, btn620]
+        
 
-        i = 7
-        btn081 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn082 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn083 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn084 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn085 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn086 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn087 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn088 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn081, btn082, btn083, btn084, btn085, btn086, btn087, btn088]
+        i = 6   
+        btn701 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn702 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn703 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn704 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn705 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn706 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn707 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn708 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn709 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn710 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn711 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn712 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn713 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn714 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn715 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn716 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn717 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn718 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn719 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn720 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn701, btn702, btn703, btn704, btn705, btn706, btn707, btn708,
+                                btn709, btn710, btn711, btn712, btn713, btn714, btn715, btn716, btn717, btn718, btn719, btn720]
+        
 
-        i = 8
-        btn091 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'0{i+1}1')
-        btn092 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'0{i+1}2')
-        btn093 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'0{i+1}3')
-        btn094 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'0{i+1}4')
-        btn095 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'0{i+1}5')
-        btn096 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'0{i+1}6')
-        btn097 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'0{i+1}7')
-        btn098 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'0{i+1}8')
-        btns_matrix[f'0{i+1}'] = [btn091, btn092, btn093, btn094, btn095, btn096, btn097, btn098]
-
-        i = 9
-        btn101 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn102 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn103 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn104 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn105 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn106 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn107 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn108 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn101, btn102, btn103, btn104, btn105, btn106, btn107, btn108]
-
-        i = 10
-        btn111 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn112 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn113 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn114 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn115 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn116 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn117 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn118 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn111, btn112, btn113, btn114, btn115, btn116, btn117, btn118]
-
-        i = 11
-        btn121 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn122 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn123 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn124 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn125 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn126 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn127 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn128 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn121, btn122, btn123, btn124, btn125, btn126, btn127, btn128]
+        i = 7   
+        btn801 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}01')
+        btn802 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}02')
+        btn803 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}03')
+        btn804 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}04')
+        btn805 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}05')
+        btn806 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}06')
+        btn807 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}07')
+        btn808 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}08')
+        btn809 = ft.ElevatedButton(f"{df[i][8]}", style=cell_style(df[i][8]), data=f'{i+1}09')
+        btn810 = ft.ElevatedButton(f"{df[i][9]}", style=cell_style(df[i][9]), data=f'{i+1}10')
+        btn811 = ft.ElevatedButton(f"{df[i][10]}", style=cell_style(df[i][10]), data=f'{i+1}11')
+        btn812 = ft.ElevatedButton(f"{df[i][11]}", style=cell_style(df[i][11]), data=f'{i+1}12')
+        btn813 = ft.ElevatedButton(f"{df[i][12]}", style=cell_style(df[i][12]), data=f'{i+1}13')
+        btn814 = ft.ElevatedButton(f"{df[i][13]}", style=cell_style(df[i][13]), data=f'{i+1}14')
+        btn815 = ft.ElevatedButton(f"{df[i][14]}", style=cell_style(df[i][14]), data=f'{i+1}15')
+        btn816 = ft.ElevatedButton(f"{df[i][15]}", style=cell_style(df[i][15]), data=f'{i+1}16')
+        btn817 = ft.ElevatedButton(f"{df[i][16]}", style=cell_style(df[i][16]), data=f'{i+1}17')
+        btn818 = ft.ElevatedButton(f"{df[i][17]}", style=cell_style(df[i][17]), data=f'{i+1}18')
+        btn819 = ft.ElevatedButton(f"{df[i][18]}", style=cell_style(df[i][18]), data=f'{i+1}19')
+        btn820 = ft.ElevatedButton(f"{df[i][19]}", style=cell_style(df[i][19]), data=f'{i+1}20')
+        btns_matrix[f'{i+1}'] = [btn801, btn802, btn803, btn804, btn805, btn806, btn807, btn808,
+                                btn809, btn810, btn811, btn812, btn813, btn814, btn815, btn816, btn817, btn818, btn819, btn820]
 
 
-        i = 12
-        btn131 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn132 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn133 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn134 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn135 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn136 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn137 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn138 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn131, btn132, btn133, btn134, btn135, btn136, btn137, btn138]
-
-        i = 13
-        btn141 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn142 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn143 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn144 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn145 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn146 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn147 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn148 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn141, btn142, btn143, btn144, btn145, btn146, btn147, btn148]
-
-        i = 14
-        btn151 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn152 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn153 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn154 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn155 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn156 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn157 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn158 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn151, btn152, btn153, btn154, btn155, btn156, btn157, btn158]
-
-        i = 15
-        btn161 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn162 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn163 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn164 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn165 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn166 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn167 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn168 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn161, btn162, btn163, btn164, btn165, btn166, btn167, btn168]
-
-        i = 16
-        btn171 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn172 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn173 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn174 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn175 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn176 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn177 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn178 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn171, btn172, btn173, btn174, btn175, btn176, btn177, btn178]
-
-        i = 17
-        btn181 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn182 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn183 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn184 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn185 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn186 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn187 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn188 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn181, btn182, btn183, btn184, btn185, btn186, btn187, btn188]
-
-        i = 18
-        btn191 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn192 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn193 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn194 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn195 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn196 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn197 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn198 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn191, btn192, btn193, btn194, btn195, btn196, btn197, btn198]
-
-        i = 19
-        btn201 = ft.ElevatedButton(f"{df[i][0]}", style=cell_style(df[i][0]), data=f'{i+1}1')
-        btn202 = ft.ElevatedButton(f"{df[i][1]}", style=cell_style(df[i][1]), data=f'{i+1}2')
-        btn203 = ft.ElevatedButton(f"{df[i][2]}", style=cell_style(df[i][2]), data=f'{i+1}3')
-        btn204 = ft.ElevatedButton(f"{df[i][3]}", style=cell_style(df[i][3]), data=f'{i+1}4')
-        btn205 = ft.ElevatedButton(f"{df[i][4]}", style=cell_style(df[i][4]), data=f'{i+1}5')
-        btn206 = ft.ElevatedButton(f"{df[i][5]}", style=cell_style(df[i][5]), data=f'{i+1}6')
-        btn207 = ft.ElevatedButton(f"{df[i][6]}", style=cell_style(df[i][6]), data=f'{i+1}7')
-        btn208 = ft.ElevatedButton(f"{df[i][7]}", style=cell_style(df[i][7]), data=f'{i+1}8')
-        btns_matrix[f'{i+1}'] = [btn201, btn202, btn203, btn204, btn205, btn206, btn207, btn208]
 
         return btns_matrix
 
