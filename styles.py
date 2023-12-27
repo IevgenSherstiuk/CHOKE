@@ -71,7 +71,9 @@ def cell_style(N:str):
                             bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
                             padding={ft.MaterialState.DEFAULT: 1},     
                             overlay_color=ft.colors.BLUE_100,
-                            side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.BLUE_100)})
+                            side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.BLUE_100)},
+                            shape={ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=2),
+                                   ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=2)})
                      return  Mu_text
 
 

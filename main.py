@@ -1,7 +1,7 @@
 import flet as ft
 from inductor import N_culculate
 from styles import cell_style
-from btns_handler import btns_from_df, update_btns, upd_H, upd_Mu
+from btns_handler import btns_from_df, update_btns
 
 
 async def main(page: ft.Page):
@@ -31,7 +31,7 @@ async def main(page: ft.Page):
 
     async def N_culc(e):
         N_df = await N_culculate(float(I.value), float(L.value), H_list, Mu_list) #>>>>main calculation
-        update_btns(btns_matrix, N_df, H_list, Mu_list)
+        update_btns(btns_matrix, N_df)
         await page.update_async()
 
 
@@ -87,7 +87,7 @@ async def main(page: ft.Page):
         H_list[H_index] = int(new_H.value)
         H_btns[H_index].text = new_H.value
         #N_df = await N_culculate(float(I.value), float(L.value), H_list, Mu_list) #>>>>main calculation
-        #update_btns(btns_matrix, N_df, H_list, Mu_list)
+        #update_btns(btns_matrix, N_df)
         popup_H.visible = False
         await page.update_async()
 
@@ -111,12 +111,12 @@ async def main(page: ft.Page):
 
 
 
-    text_Mu = ft.ElevatedButton(content=ft.Text("Mu", size=17), style=cell_style(-6), data=i, on_click=upd_Mu_Panel, disabled=True)  
+    text_Mu = ft.ElevatedButton(content=ft.Text("Mu", size=17), style=cell_style(-6), data=i, on_click=upd_Mu_Panel, disabled=True)    
     text_H = ft.Text('Высота Осердя', size=16, color=ft.colors.CYAN_800, text_align='center')
-
 
     #MAIN MATRIX 
     Mu_ = ft.Column(controls=[text_Mu] + Mu_btns, spacing=5)
+    cln_empty = ft.Column(controls=[text_Mu]*19, spacing=5)
     cln0 = ft.Column(controls=[H_btns[0]] + btns_matrix[f'1'], spacing=5)
     cln1 = ft.Column(controls=[H_btns[1]] + btns_matrix[f'2'], spacing=5)
     cln2 = ft.Column(controls=[H_btns[2]] + btns_matrix[f'3'], spacing=5)
@@ -126,8 +126,9 @@ async def main(page: ft.Page):
     cln6 = ft.Column(controls=[H_btns[6]] + btns_matrix[f'7'], spacing=5)
     cln7 = ft.Column(controls=[H_btns[7]] + btns_matrix[f'8'], spacing=5)  
     #----
-    matrix = ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
-            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='hidden')
+    scrolled_Row = ft.Row(controls=[cln_empty, cln0, cln1, cln2, cln3, cln4,
+            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='always')
+    matrix = ft.Stack([scrolled_Row, cln_empty, Mu_])
     
 
 
