@@ -111,11 +111,10 @@ async def main(page: ft.Page):
 
 
 
-    # text_Mu = ft.Container(ft.Text('Mu', size=16, color=ft.colors.DEEP_ORANGE_900), height=40, width=60)
-    # text_Mu.alignment = ft.alignment.bottom_center
-    text_Mu = ft.ElevatedButton(f"Mu", style=cell_style(-6), data=i, on_click=upd_Mu_Panel, disabled=True)    
+    text_Mu = ft.ElevatedButton(content=ft.Text("Mu", size=17), style=cell_style(-6), data=i, on_click=upd_Mu_Panel, disabled=True)  
     text_H = ft.Text('Высота Осердя', size=16, color=ft.colors.CYAN_800, text_align='center')
-    #text.alignment = ft.alignment.center
+
+
     #MAIN MATRIX 
     Mu_ = ft.Column(controls=[text_Mu] + Mu_btns, spacing=5)
     cln0 = ft.Column(controls=[H_btns[0]] + btns_matrix[f'1'], spacing=5)
