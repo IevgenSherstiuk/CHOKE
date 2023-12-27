@@ -111,7 +111,7 @@ async def main(page: ft.Page):
 
 
 
-    text_Mu = ft.ElevatedButton(content=ft.Text("Mu", size=17), style=cell_style(-6), data=i, on_click=upd_Mu_Panel, disabled=True)    
+    text_Mu = ft.ElevatedButton(content=ft.Text("Mu", size=17), style=cell_style(-6), disabled=True)    
     text_H = ft.Text('Высота Осердя', size=16, color=ft.colors.CYAN_800, text_align='center')
 
     #MAIN MATRIX 

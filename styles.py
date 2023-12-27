@@ -72,8 +72,8 @@ def cell_style(N:str):
                             padding={ft.MaterialState.DEFAULT: 1},     
                             overlay_color=ft.colors.BLUE_100,
                             side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.BLUE_100)},
-                            shape={ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=2),
-                                   ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=2)})
+                            shape={ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=0),
+                                   ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=0)})
                      return  Mu_text
 
 
@@ -86,12 +86,14 @@ def cell_style(N:str):
                      bgcolor={ft.MaterialState.FOCUSED: ft.colors.GREEN_ACCENT_200,
                                    ft.MaterialState.HOVERED: ft.colors.AMBER_600,
                                    ft.MaterialState.DEFAULT: ft.colors.AMBER_900},
+                     elevation={"pressed": 0, "": 0},
                      padding={ft.MaterialState.DEFAULT: 1},
                      animation_duration=300,
                      side= {ft.MaterialState.DEFAULT: ft.BorderSide(1, ft.colors.BLUE),
                             ft.MaterialState.HOVERED: ft.BorderSide(2, ft.colors.WHITE60)},
                      shape={ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=30),
                             ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=30)})
+                     
        
        else:       
               if N < 0: color = ft.colors.LIGHT_BLUE_100
@@ -109,6 +111,7 @@ def cell_style(N:str):
                      bgcolor={ft.MaterialState.FOCUSED: ft.colors.GREEN_ACCENT_200,
                                    ft.MaterialState.HOVERED: ft.colors.AMBER_600,
                                    ft.MaterialState.DEFAULT: color},
+                     elevation={"pressed": 0, "": 0},
                      padding={ft.MaterialState.DEFAULT: 1},
                      animation_duration=300,
                      side= {ft.MaterialState.DEFAULT: ft.BorderSide(1, ft.colors.BLUE),
