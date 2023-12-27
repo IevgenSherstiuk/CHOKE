@@ -116,7 +116,7 @@ async def main(page: ft.Page):
 
     #MAIN MATRIX 
     Mu_ = ft.Column(controls=[text_Mu] + Mu_btns, spacing=5)
-    cln_empty = ft.Column(controls=[text_Mu]*19, spacing=5)
+    cln_empty = ft.Column(controls=[text_Mu]*21, spacing=5)
     cln0 = ft.Column(controls=[H_btns[0]] + btns_matrix[f'1'], spacing=5)
     cln1 = ft.Column(controls=[H_btns[1]] + btns_matrix[f'2'], spacing=5)
     cln2 = ft.Column(controls=[H_btns[2]] + btns_matrix[f'3'], spacing=5)
@@ -127,7 +127,7 @@ async def main(page: ft.Page):
     cln7 = ft.Column(controls=[H_btns[7]] + btns_matrix[f'8'], spacing=5)  
     #----
     scrolled_Row = ft.Row(controls=[cln_empty, cln0, cln1, cln2, cln3, cln4,
-            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='hidden')
+            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='always')
     matrix = ft.Stack([scrolled_Row, cln_empty, Mu_])
     
 
