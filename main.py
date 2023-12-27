@@ -127,7 +127,7 @@ async def main(page: ft.Page):
     cln7 = ft.Column(controls=[H_btns[7]] + btns_matrix[f'8'], spacing=5)  
     #----
     scrolled_Row = ft.Row(controls=[cln_empty, cln0, cln1, cln2, cln3, cln4,
-            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='always')
+            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='hidden')
     matrix = ft.Stack([scrolled_Row, cln_empty, Mu_])
     
 
