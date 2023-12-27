@@ -14,6 +14,40 @@ def update_btns(btns_matrix, df, H_list, Mu_list):
             btn.text = new_value  #<<< err if axis dublicated need to handle
             btn.style = cell_style(new_value)
 
+
+#new axis values
+def upd_Mu(e):
+    print(e.control.data)
+    # New_MuValue = ft.TextField(value=f"{Mu}",
+    #                     text_align="center",
+    #                     text_size=16,
+    #                     border_radius=0,
+    #                     border_width=2,
+    #                     border_color=ft.colors.DEEP_ORANGE_900,
+    #                     cursor_color=ft.colors.DEEP_ORANGE_900,
+    #                     content_padding=ft.padding.all(0),
+    #                     width=800,
+    #                     height=600,
+    #                     color=ft.colors.DEEP_ORANGE_900)
+def upd_H(e):
+    print(e.control.data)
+    # New_HValue = ft.TextField(value=f"{height}",
+    #                         text_align="center",
+    #                         text_size=16,
+    #                         border_radius=20,
+    #                         border_width=2,
+    #                         border_color=ft.colors.CYAN_800,
+    #                         cursor_color=ft.colors.CYAN_800,
+    #                         content_padding=ft.padding.all(0),
+    #                         width=60,
+    #                         height=40,
+    #                         color=ft.colors.CYAN_900)
+
+
+
+
+
+
 async def btns_from_df(df):
         
         btns_matrix = {}

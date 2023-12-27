@@ -4,15 +4,67 @@ def cell_style(N:str):
        try: N = int(N)
        except: N = -1
 
-       if N == -1:
+       if N == -3:
+                     Mu_style = ft.ButtonStyle(             
+                            color={ft.MaterialState.DEFAULT: ft.colors.DEEP_ORANGE_900},
+                            bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
+                            padding={ft.MaterialState.DEFAULT: 1},     
+                            overlay_color=ft.colors.BLUE_200,
+                            side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.DEEP_ORANGE_900)})
+                     return  Mu_style
+
+
+       elif N == -2:
+                     H_style = ft.ButtonStyle(             
+                            color={ft.MaterialState.DEFAULT: ft.colors.CYAN_800},
+                            bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
+                            padding={ft.MaterialState.DEFAULT: 1},     
+                            overlay_color=ft.colors.BLUE_200,
+                            side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.CYAN_800)})
+                     return  H_style
+
+
+       elif N == -1:
               empty_style = ft.ButtonStyle(             
                      color={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
                      bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
                      padding={ft.MaterialState.DEFAULT: 1},     
                      overlay_color=ft.colors.BLUE_100,
-                     #elevation={"pressed": 1, "": 1},
                      side={ft.MaterialState.DEFAULT: ft.BorderSide(0, ft.colors.BLUE_100)})
               return  empty_style
+       
+
+
+       elif N == -4:
+              Mu_edit_style = ft.ButtonStyle(
+                     color={ft.MaterialState.FOCUSED: ft.colors.DEEP_ORANGE_900,
+                            ft.MaterialState.DEFAULT: ft.colors.DEEP_ORANGE_900},
+                     bgcolor={ft.MaterialState.HOVERED: ft.colors.DEEP_ORANGE_100,
+                            ft.MaterialState.DEFAULT: ft.colors.DEEP_ORANGE_50},
+                     padding={ft.MaterialState.DEFAULT: 1},
+                     animation_duration=300,
+                     side= {ft.MaterialState.DEFAULT: ft.BorderSide(1, ft.colors.DEEP_ORANGE_900),
+                            ft.MaterialState.HOVERED: ft.BorderSide(2, ft.colors.DEEP_ORANGE_900)},
+                     shape={ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=3),
+                            ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=3)})
+               
+              return Mu_edit_style
+       
+       elif N == -5:
+              H_edit_style = ft.ButtonStyle(
+                     color={ft.MaterialState.HOVERED: ft.colors.CYAN_900,
+                            ft.MaterialState.DEFAULT: ft.colors.CYAN_900},
+                     bgcolor={ft.MaterialState.HOVERED: ft.colors.CYAN_100,
+                            ft.MaterialState.DEFAULT: ft.colors.CYAN_50},
+                     padding={ft.MaterialState.DEFAULT: 1},
+                     animation_duration=300,
+                     side= {ft.MaterialState.DEFAULT: ft.BorderSide(1, ft.colors.CYAN_900),
+                            ft.MaterialState.HOVERED: ft.BorderSide(2, ft.colors.CYAN_900)},
+                     shape={ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=3),
+                            ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=3)})
+               
+              return H_edit_style
+
        elif N == 0:
               cell_style = ft.ButtonStyle(
                      color={ft.MaterialState.HOVERED: ft.colors.WHITE,

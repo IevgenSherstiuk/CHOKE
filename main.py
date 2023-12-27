@@ -1,7 +1,7 @@
 import flet as ft
 from inductor import N_culculate
 from styles import cell_style
-from btns_handler import btns_from_df, update_btns
+from btns_handler import btns_from_df, update_btns, upd_H, upd_Mu
 
 
 async def main(page: ft.Page):
@@ -30,17 +30,11 @@ async def main(page: ft.Page):
 
 
     async def N_culc(e):
-        H_list = []
-        for textfield in H_inst_strip:
-            H_list.append(int(textfield.value)) 
-
-        Mu_list = []
-        for textfield in Mu_inst_strip:
-            Mu_list.append(int(textfield.value))
-
         N_df = await N_culculate(float(I.value), float(L.value), H_list, Mu_list) #>>>>main calculation
         update_btns(btns_matrix, N_df, H_list, Mu_list)
         await page.update_async()
+
+
 
 
     async def get_N(e):
@@ -51,8 +45,8 @@ async def main(page: ft.Page):
         
         #move to btn instant in dic >> to change color
         if 'None' not in e.control.text:
-            btn_index = int(e.control.data[-1])-1
-            key = e.control.data[0:2]
+            key = e.control.data[0]
+            btn_index = int(e.control.data[-2:])-1
             btns_matrix[key][btn_index].style = cell_style(0)
 
         output_text.value = f"THE COST IS {e.control.text}"
@@ -66,84 +60,108 @@ async def main(page: ft.Page):
         for btn in btns_matrix[row]:
             btn.on_click = get_N
 
+    #UPDs Lists Mu,H values
+    #---Mu--
+    async def upd_Mu_Panel(e):
+        new_Mu.value = int(e.control.text)
+        popup_Mu.visible = True
+        global Mu_index
+        Mu_index = e.control.data
+        await page.update_async()
 
-    #AXIS VALUES 
-    H_inst, H_inst_strip = [],[]
+    async def upd_Mu(e):
+        Mu_list[Mu_index] = int(new_Mu.value)
+        Mu_btns[Mu_index].text = new_Mu.value
+        popup_Mu.visible = False
+        await page.update_async()
+
+    #---Height--
+    async def upd_H_Panel(e):
+        new_H.value = int(e.control.text)
+        popup_H.visible = True
+        global H_index
+        H_index = e.control.data
+        await page.update_async()
+
+    async def upd_H(e):
+        H_list[H_index] = int(new_H.value)
+        H_btns[H_index].text = new_H.value
+        #N_df = await N_culculate(float(I.value), float(L.value), H_list, Mu_list) #>>>>main calculation
+        #update_btns(btns_matrix, N_df, H_list, Mu_list)
+        popup_H.visible = False
+        await page.update_async()
+
+
+    #AXIS VALUES
+
+    H_btns = []
     for height in H_list:
-        Value = ft.TextField(value=f"{height}",
-                            text_align="center",
-                            text_size=16,
-                            border_radius=20,
-                            border_width=2,
-                            border_color=ft.colors.CYAN_800,
-                            cursor_color=ft.colors.CYAN_800,
-                            content_padding=ft.padding.all(0),
-                            width=60,
-                            height=40,
-                            color=ft.colors.CYAN_900)
-        
-        H_inst_strip.append(Value)
-        H_inst.append(ft.Container(Value, padding=0))
+        i = H_list.index(height)     
+        Value = ft.ElevatedButton(f"{height}", style=cell_style(-2), data=i, on_click=upd_H_Panel)
+        H_btns.append(Value)
 
-    Mu_inst, Mu_inst_strip = [],[]
+
+    Mu_btns = []
     for Mu in Mu_list:
-        Value = ft.TextField(value=f"{Mu}",
-                            text_align="center",
-                            text_size=16,
-                            border_radius=20,
-                            border_width=2,
-                            border_color=ft.colors.DEEP_ORANGE_900,
-                            cursor_color=ft.colors.DEEP_ORANGE_900,
-                            content_padding=ft.padding.all(0),
-                            width=60,
-                            height=40,
-                            color=ft.colors.DEEP_ORANGE_900)
-
-        Mu_inst_strip.append(Value)
-        Mu_inst.append(Value)
-        #Mu_inst.append(ft.Row(controls=[Value,ft.Text('')]))
-
-
-    #MAIN MATRIX 
-    Mu_ = ft.Column(controls=[ft.Container(height=40)] + Mu_inst)#, spacing=10)
-    cln0 = ft.Column(controls=[H_inst[0]] + btns_matrix[f'1'])#, spacing=8)
-    cln1 = ft.Column(controls=[H_inst[1]] + btns_matrix[f'2'])#, spacing=8)
-    cln2 = ft.Column(controls=[H_inst[2]] + btns_matrix[f'3'])#, spacing=8)
-    cln3 = ft.Column(controls=[H_inst[3]] + btns_matrix[f'4'])#, spacing=8)
-    cln4 = ft.Column(controls=[H_inst[4]] + btns_matrix[f'5'])#, spacing=8)
-    cln5 = ft.Column(controls=[H_inst[5]] + btns_matrix[f'6'])#, spacing=8)
-    cln6 = ft.Column(controls=[H_inst[6]] + btns_matrix[f'7'])#, spacing=8)
-    cln7 = ft.Column(controls=[H_inst[7]] + btns_matrix[f'8'])#, spacing=8)
+        i = Mu_list.index(Mu)
+        Value = ft.ElevatedButton(f"{Mu}", style=cell_style(-3), data=i, on_click=upd_Mu_Panel)
+        Mu_btns.append(Value)
     
-    cln8 = ft.Column(controls=[
-        ft.TextField(value='1'),
-        ft.TextField(value='2'),
-        ft.TextField(value='3')], spacing=0)
- 
 
 
 
+
+    text_Mu = ft.Container(ft.Text('Mu', size=16, color=ft.colors.DEEP_ORANGE_900), height=40, width=60)
+    text_Mu.alignment = ft.alignment.bottom_center
+    text_H = ft.Text('Высота Осерддя', size=16, color=ft.colors.CYAN_800, text_align='center')
+    #text.alignment = ft.alignment.center
+    #MAIN MATRIX 
+    Mu_ = ft.Column(controls=[text_Mu] + Mu_btns, spacing=5)
+    cln0 = ft.Column(controls=[H_btns[0]] + btns_matrix[f'1'], spacing=5)
+    cln1 = ft.Column(controls=[H_btns[1]] + btns_matrix[f'2'], spacing=5)
+    cln2 = ft.Column(controls=[H_btns[2]] + btns_matrix[f'3'], spacing=5)
+    cln3 = ft.Column(controls=[H_btns[3]] + btns_matrix[f'4'], spacing=5)
+    cln4 = ft.Column(controls=[H_btns[4]] + btns_matrix[f'5'], spacing=5)
+    cln5 = ft.Column(controls=[H_btns[5]] + btns_matrix[f'6'], spacing=5)
+    cln6 = ft.Column(controls=[H_btns[6]] + btns_matrix[f'7'], spacing=5)
+    cln7 = ft.Column(controls=[H_btns[7]] + btns_matrix[f'8'], spacing=5)  
     #----
     matrix = ft.Row(controls=[Mu_, cln0, cln1, cln2, cln3, cln4,
-                        cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=10, scroll='hidden')
+            cln5, cln6, cln7], alignment=ft.MainAxisAlignment.CENTER, spacing=5, scroll='hidden')
+    
 
-    title_text = ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22)
-    title_row = ft.Row(controls=[title_text], alignment=ft.MainAxisAlignment.CENTER)
-    title_text_colmn = ft.Container(content=ft.Column([title_row], horizontal_alignment=ft.MainAxisAlignment.CENTER), bgcolor=ft.colors.TEAL_50, padding=20)
-    output_text = ft.Text('Please select N-cell from table', color=ft.colors.BLUE_900, size=16)    
+
+
+    #PAGE_BLOCKS - DESIGN
+    title_text = ft.Container(ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22), bgcolor=ft.colors.TEAL_50, padding=20, border_radius=20, width=4000)
+    title_text.alignment = ft.alignment.bottom_center
+      
     culc_btn = ft.Container(ft.ElevatedButton('CALCULATE', on_click=N_culc))
     culc_btn.padding = ft.padding.only(bottom=20)
 
-    matrixCtr = ft.Container(content=matrix, bgcolor=ft.colors.BLUE_100, border_radius=20, width=2000)
-    matrixCtr.alignment = ft.alignment.center
-    matrixCtr.padding = ft.padding.only(bottom=30, top=30, left=10, right=10)
+    output_text = ft.Text('Please select N-cell from table', color=ft.colors.BLUE_900, size=16) 
 
-    await page.add_async(title_text_colmn,
+    matrixCtr = ft.Container(content=ft.Column([text_H, matrix], spacing=6, horizontal_alignment='center'), bgcolor=ft.colors.BLUE_100, border_radius=20, width=4000)
+    matrixCtr.alignment = ft.alignment.center
+    matrixCtr.padding = ft.padding.only(bottom=30, top=20, left=10, right=10)
+
+
+    new_Mu = ft.TextField(label="Значення Mu", height=40, width=200, content_padding=ft.padding.all(5), text_align='center', border_color=ft.colors.DEEP_ORANGE_900)
+    Mu_btn = ft.OutlinedButton('Змiнити', style=cell_style(-4), on_click=upd_Mu, width=80)
+    popup_Mu = ft.Container(content=ft.Row([new_Mu,Mu_btn], alignment=ft.MainAxisAlignment.CENTER, spacing=5), padding=10, width=500, visible=False)
+    new_H = ft.TextField(label="Значення H", height=40, width=200, content_padding=ft.padding.all(5), text_align='center', border_color=ft.colors.CYAN_900)
+    H_btn = ft.OutlinedButton('Змiнити', style=cell_style(-5), on_click=upd_H, width=80)
+    popup_H = ft.Container(content=ft.Row([new_H,H_btn], alignment=ft.MainAxisAlignment.CENTER, spacing=5), padding=10, width=500, visible=False)
+    
+
+    await page.add_async(title_text,
             ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden', wrap=True), padding=20),
             culc_btn,
+            popup_H,
+            popup_Mu,
             output_text,
-            matrixCtr,
-            cln8)
+            matrixCtr)
+    
     await page.update_async()
 
 
