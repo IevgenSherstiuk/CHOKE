@@ -111,8 +111,7 @@ async def main(page: ft.Page):
 
 
 
-    text_Mu = ft.Container(ft.Text('Mu', size=16, color=ft.colors.DEEP_ORANGE_900), height=40, width=60)
-    text_Mu.alignment = ft.alignment.bottom_center
+    text_Mu = ft.ElevatedButton(f"Mu", style=cell_style(-3), data=i, on_click=upd_Mu_Panel) 
     text_H = ft.Text('Высота Осерддя', size=16, color=ft.colors.CYAN_800, text_align='center')
     #text.alignment = ft.alignment.center
     #MAIN MATRIX 
