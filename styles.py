@@ -64,6 +64,17 @@ def cell_style(N:str):
                             ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=3)})
                
               return H_edit_style
+       
+       if N == -6:
+                     Mu_text = ft.ButtonStyle(             
+                            color={ft.MaterialState.DEFAULT: ft.colors.DEEP_ORANGE_900},
+                            bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
+                            padding={ft.MaterialState.DEFAULT: 1},     
+                            overlay_color=ft.colors.BLUE_100,
+                            side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.BLUE_100)})
+                     return  Mu_text
+
+
 
        elif N == 0:
               cell_style = ft.ButtonStyle(
