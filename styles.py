@@ -18,7 +18,8 @@ def cell_style(N:str):
                      H_style = ft.ButtonStyle(             
                             color={ft.MaterialState.DEFAULT: ft.colors.CYAN_800},
                             bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
-                            padding={ft.MaterialState.DEFAULT: 1},     
+                            padding={ft.MaterialState.DEFAULT: 1},
+                            elevation={"pressed": 0, "": 0},     
                             overlay_color=ft.colors.BLUE_200,
                             side={ft.MaterialState.DEFAULT: ft.BorderSide(2, ft.colors.CYAN_800)})
                      return  H_style
@@ -28,7 +29,8 @@ def cell_style(N:str):
               empty_style = ft.ButtonStyle(             
                      color={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
                      bgcolor={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
-                     padding={ft.MaterialState.DEFAULT: 1},     
+                     padding={ft.MaterialState.DEFAULT: 1},
+                     elevation={"pressed": 0, "": 0},     
                      overlay_color=ft.colors.BLUE_100,
                      side={ft.MaterialState.DEFAULT: ft.BorderSide(0, ft.colors.BLUE_100)})
               return  empty_style
