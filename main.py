@@ -186,7 +186,7 @@ async def main(page: ft.Page):
     async def to_Settings(route):
         await page.go_async("/settings")
 
-    title_text = ft.AppBar(title=ft.Text('КАЛЬКУЛЯТОР ВАРТОСТI ДРОСЕЛЯ', color=ft.colors.CYAN_900, size=22),
+    title_text = ft.AppBar(title=ft.Text('Вартiсть Дроселя', color=ft.colors.CYAN_900, size=22),
                         bgcolor=ft.colors.TEAL_50,
                         center_title=True,
                         actions=[ft.IconButton(ft.icons.SETTINGS, on_click=to_Settings)])
