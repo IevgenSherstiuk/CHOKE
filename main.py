@@ -14,10 +14,14 @@ async def main(page: ft.Page):
     page.theme_mode = 'light'
     page.theme = ft.Theme(color_scheme_seed=ft.colors.LIGHT_BLUE_700)
 
-    #inputs
-    I = ft.TextField(label="  Current Intensity, A", height=40, width=250, content_padding=ft.padding.all(5), text_align='center')
-    L = ft.TextField(label="  Inductance, mGn", height=40, width=250, content_padding=ft.padding.all(5), text_align='center')
-    
+    #Inputs
+    I = ft.TextField(label="Current Intensity, A", height=40, width=250, content_padding=ft.padding.all(5), text_align='center')
+    L = ft.TextField(label="Inductance, mGn", height=40, width=250, content_padding=ft.padding.all(5), text_align='center')
+    I.value = 1
+    L.value = 50
+
+    #Additional Inputs
+
 
     #GET DATA_FRAME
     H_list = [5,10,15,20,25,30,40,50]
@@ -132,10 +136,14 @@ async def main(page: ft.Page):
     
 
 
-
+    async def to_Settings(route):
+        await page.go_async("/settings")
     #PAGE_BLOCKS - DESIGN
-    title_text = ft.Container(ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22), bgcolor=ft.colors.TEAL_50, padding=20, border_radius=20, width=4000)
-    title_text.alignment = ft.alignment.bottom_center
+    title_text = ft.AppBar(title=ft.Text('CHOKE COST CALCULATOR', color=ft.colors.CYAN_900, size=22),
+                        bgcolor=ft.colors.TEAL_50,
+                        center_title=True,
+                        actions=[ft.IconButton(ft.icons.SETTINGS, on_click=to_Settings)])
+
       
     culc_btn = ft.Container(ft.ElevatedButton('CALCULATE', on_click=N_culc))
     culc_btn.padding = ft.padding.only(bottom=20)
@@ -155,15 +163,51 @@ async def main(page: ft.Page):
     popup_H = ft.Container(content=ft.Row([new_H,H_btn], alignment=ft.MainAxisAlignment.CENTER, spacing=5), padding=10, width=500, visible=False)
     
 
-    await page.add_async(title_text,
-            ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden', wrap=True), padding=20),
-            culc_btn,
-            popup_H,
-            popup_Mu,
-            output_text,
-            matrixCtr)
+    #ROUTING PAGES(VIEWS)
+    async def route_change(route):
+        page.views.clear()
+        page.views.append(
+            ft.View("/",
+                [title_text,
+                ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden', wrap=True), padding=20),
+                culc_btn,
+                popup_H,
+                popup_Mu,
+                output_text,
+                matrixCtr],
+                horizontal_alignment='center',
+                vertical_alignment = ft.MainAxisAlignment.START,
+                scroll=True))
+        if page.route == "/settings":
+            page.views.append(
+                ft.View("/settings",
+                    [ft.AppBar(title=ft.Text("Additional Settings"), bgcolor=ft.colors.DEEP_ORANGE_100, center_title=True),
+                    ft.TextField(label='Values1'),
+                    ft.TextField(label='Values2'),
+                    ft.TextField(label='Values3'),
+                    ft.TextField(label='Values4'),
+                    ]))
+        await page.update_async()
+
+    async def back(route):
+        page.views.pop()
+        top_view = page.views[-1]
+        await page.go_async(top_view.route)
+
+
+    page.on_route_change = route_change
+    #page.on_view_pop = back
+
+    await page.go_async(page.route)
+    # await page.add_async(title_text,
+    #         ft.Container(content=ft.Row([I, L], alignment=ft.MainAxisAlignment.CENTER, spacing=30, scroll='hidden', wrap=True), padding=20),
+    #         culc_btn,
+    #         popup_H,
+    #         popup_Mu,
+    #         output_text,
+    #         matrixCtr)
     
-    await page.update_async()
+    # await page.update_async()
 
 
 ft.app(target=main, view=ft.WEB_BROWSER, port=8000)
