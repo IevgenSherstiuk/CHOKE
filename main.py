@@ -196,7 +196,7 @@ async def main(page: ft.Page):
 
 
     page.on_route_change = route_change
-    #page.on_view_pop = back
+    page.on_view_pop = back
 
     await page.go_async(page.route)
     # await page.add_async(title_text,
